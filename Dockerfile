@@ -23,10 +23,6 @@ RUN apt-get update && apt-get install -y \
 ARG R_VERSION
 ENV R_VERSION ${R_VERSION:-3.2.3}
 
-# Add Linux libraries that may be needed by R packages
-RUN apt-get update \
-    && apt-get install -y libxml2-dev
-
 # Add shiny libraries to R
 RUN . /etc/environment \
     && [ "$R_VERSION" = "latest" ] && REPO="http://cran.rstudio.com/" || REPO=$MRAN \
