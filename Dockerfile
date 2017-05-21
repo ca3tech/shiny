@@ -1,4 +1,4 @@
-FROM ca3tech/r-ver:latest
+FROM ca3tech/r-ver:3.3.3
 
 MAINTAINER Clifford Wollam "wollam@ca3tech.com"
 
@@ -21,7 +21,7 @@ RUN apt-get update && apt-get install -y \
 
 ### ca3tech additions from here
 ARG R_VERSION
-ENV R_VERSION ${R_VERSION:-latest}
+ENV R_VERSION ${R_VERSION:-3.3.3}
 
 # Add shiny libraries to R
 RUN . /etc/environment \
